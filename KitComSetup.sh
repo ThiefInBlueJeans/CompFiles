@@ -12,12 +12,22 @@ sudo pacman -Syu
 echo " "
 
 echo "// Removing Applications //"
-echo "Use: pacman -Q to list installed packages
+echo "Use: pacman -Q to list installed packages"
 echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-connections gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
 echo " "
 
 echo "// Installing Apllications //"
-sudo pacman -S vlc ufw chromium cups -y
+sudo pacman -S vlc ufw cups base-devel
+mkdir /home/family/AUR/
+cd /home/family/AUR/
+curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz
+tar -xvf google-chrome.tar.gz
+rm google-chrome.tar.gz
+cd google-chrome
+makepkg -sirc
+cd /home/family/AUR/
+rm google-chrome
+cd /home/family/
 echo " "
 
 echo "// Updating Aliases //"
