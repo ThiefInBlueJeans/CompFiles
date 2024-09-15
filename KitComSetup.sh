@@ -52,8 +52,8 @@ echo "// Click 'Install PPD File' //"
 echo "// Select Brother_HL-2270DW_series.ppd //"
 echo "// Edit 'Printer Options' //"
 echo "// click 'Use Printer by Default' //"
-sudo systemctl enable cups
-sudo systemctl start cups
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Brother_HL-2270DW_series.ppd
 echo " "
 
