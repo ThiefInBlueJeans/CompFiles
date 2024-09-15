@@ -31,13 +31,13 @@ echo " "
 
 echo "// Updating Aliases //"
 sudo cp /etc/bash.bashrc /etc/bash.bashrc.bak
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/bash.bashrc
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/bash.bashrc
 sudo mv bash.bashrc /etc/bash.bashrc
 echo " "
 
 echo "// Configuring Micro //"
 mkdir /home/family/.config/micro/
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/settings.json
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/settings.json
 mv settings.json /home/family/.config/micro/settings.json
 echo " " 
 
@@ -64,12 +64,7 @@ echo "// Edit 'Printer Options' //"
 echo "// click 'Use Printer by Default' //"
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Brother_HL-2270DW_series.ppd
-echo " "
-
-echo "// Change Background & Profile Pictures //"
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Background_Pic.jpg
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/Brother_HL-2270DW_series.ppd
 echo " "
 
 echo "run $ source /etc/bash.bashrc"

@@ -1,7 +1,9 @@
 echo "// Running Setup Script //"
 echo " "
 
-echo "// Checking Time and Date //"
+echo "// Updating Time and Date //"
+sudo timedatectl set-timezone America/Los_Angeles
+sudo timedateclt set-ntp true
 sudo timedatectl status 
 echo " "
 
@@ -9,23 +11,33 @@ echo "// Updating System //"
 sudo pacman -Syu
 echo " "
 
-# echo "// Removing Applications //"
-# echo "y" | sudo pacman -R 
-# echo " "
+echo "// Removing Applications //"
+echo "Use: pacman -Q to list installed packages"
+echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-connections gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
+echo " "
 
 echo "// Installing Apllications //"
-sudo pacman -S vlc ufw chromium -y
+sudo pacman -S vlc ufw cups base-devel
+mkdir /home/family/AUR/
+cd /home/family/AUR/
+curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz
+tar -xvf google-chrome.tar.gz
+rm google-chrome.tar.gz
+cd google-chrome
+makepkg -sirc
+cd /home/family/
+rm -r AUR
 echo " "
 
 echo "// Updating Aliases //"
 sudo cp /etc/bash.bashrc /etc/bash.bashrc.bak
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/bash.bashrc
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/bash.bashrc
 sudo mv bash.bashrc /etc/bash.bashrc
 echo " "
 
 echo "// Configuring Micro //"
 mkdir /home/family/.config/micro/
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/settings.json
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/settings.json
 mv settings.json /home/family/.config/micro/settings.json
 echo " " 
 
@@ -41,7 +53,7 @@ echo " "
 echo "// Configure Printing //"
 echo "// Go to 'Settings' > 'Printers' > 'Unlock' > 
 'Add Printer' //"
-echo "// Enter IPv4 Address '192.168.0.209' //"
+echo "// Enter IPv4 Address '.30' //"
 echo "// Click 'LPD-Printer' //"
 echo "// Select 'Generic' > 'Generic PDF Printer' //"
 echo "// Click Three Dots //"
@@ -50,15 +62,24 @@ echo "// Click 'Install PPD File' //"
 echo "// Select Brother_HL-2270DW_series.ppd //"
 echo "// Edit 'Printer Options' //"
 echo "// click 'Use Printer by Default' //"
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Brother_HL-2270DW_series.ppd
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/Brother_HL-2270DW_series.ppd
 echo " "
 
-echo "// Change Background & Profile Pictures //"
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Background_Pic.jpg
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
+echo "run $ source /etc/bash.bashrc"
+echo "run $ paclean"
+echo "run $ sudo systemctl enable bluetooth"
+echo "run $ sudo systemctl start bluetooth"
+echo "run $ sudo reboot now"
 echo " "
 
 echo "// Setup Script Complete //"
+
+echo "// Change Background & Profile Pictures //"
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Background_Pic.jpg
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
+echo " "
 
 # echo "// Installing Samba //"
 # echo "y" | sudo pacman -S samba avahi
