@@ -25,9 +25,8 @@ tar -xvf google-chrome.tar.gz
 rm google-chrome.tar.gz
 cd google-chrome
 makepkg -sirc
-cd /home/family/AUR/
-rm google-chrome
 cd /home/family/
+rm -r AUR
 echo " "
 
 echo "// Updating Aliases //"
