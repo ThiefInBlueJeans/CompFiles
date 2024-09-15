@@ -1,12 +1,15 @@
-Lenovo Laptop - Arch + Gnome + GDM
 
-Plug-In USB
-Boot to USB Menu w/ Fn+F12
+### DO NOT RUN ###
+
+# Lenovo Laptop - Arch + Gnome + GDM
+
+# Plug-In USB
+# Boot to USB Menu w/ Fn+F12
 ping archlinux.org
 fdisk -l
 setfont ter-132b
 fdisk /dev/sda
-d (As many Times as Necessary)
+d   # as many Times as Necessary
 n
 +1000M
 t
@@ -32,10 +35,10 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
 hwclock --systohc
 micro /etc/locale.gen
-Uncomment "en_US.UTF-8 UTF-8"
+# uncomment "en_US.UTF-8 UTF-8"
 locale-gen
 micro /etc/hostname
-Add "KitCom2"
+# add "KitCom2"
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman -Syu
@@ -43,21 +46,19 @@ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist
 passwd
-Add ""
 useradd -m family
 passwd family
-Add ""
 rfkill list
 EDITOR=micro visudo /etc/sudoers
-Add "family ALL=(ALL:ALL) ALL"
+# add "family ALL=(ALL:ALL) ALL"
 systemctl enable NetworkManager.service
 systemctl enable gdm.service
 exit
 shutdown now
-Remove USB
-Power On
+# remove USB
+# power On
 ping archlinux.org
-Go through settings
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/KitComSetup.sh
+# edit settings
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/KitCom/setup.sh
 chmod +x KitComSetup.sh
 ./KitComSetup.sh
