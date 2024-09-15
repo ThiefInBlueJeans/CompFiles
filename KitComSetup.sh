@@ -19,13 +19,13 @@ echo " "
 
 echo "// Updating Aliases //"
 sudo cp /etc/bash.bashrc /etc/bash.bashrc.bak
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/bash.bashrc
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/bash.bashrc
 sudo mv bash.bashrc /etc/bash.bashrc
 echo " "
 
 echo "// Configuring Micro //"
 mkdir /home/family/.config/micro/
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/settings.json
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/settings.json
 mv settings.json /home/family/.config/micro/settings.json
 echo " " 
 
@@ -50,12 +50,12 @@ echo "// Click 'Install PPD File' //"
 echo "// Select Brother_HL-2270DW_series.ppd //"
 echo "// Edit 'Printer Options' //"
 echo "// click 'Use Printer by Default' //"
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Brother_HL-2270DW_series.ppd
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Brother_HL-2270DW_series.ppd
 echo " "
 
 echo "// Change Background & Profile Pictures //"
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Background_Pic.jpg
-curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Background_Pic.jpg
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
 echo " "
 
 echo "run $ source /etc/bash.bashrc"
