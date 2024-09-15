@@ -1,7 +1,9 @@
 echo "// Running Setup Script //"
 echo " "
 
-echo "// Checking Time and Date //"
+echo "// Updating Time and Date //"
+sudo timedatectl set-timezone America/Los_Angeles
+sduo timedateclt set-ntp true
 sudo timedatectl status 
 echo " "
 
