@@ -58,4 +58,11 @@ curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Backgr
 curl -O https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Profile_Pic.jpg
 echo " "
 
+echo "run $ source /etc/bash.bashrc"
+echo "run $ paclean"
+echo "run $ sudo systemctl enable bluetooth"
+echo "run $ sudo systemctl start bluetooth"
+echo "run $ sudo reboot now"
+echo " "
+
 echo "// Setup Script Complete //"
