@@ -11,9 +11,10 @@ echo "// Updating System //"
 sudo pacman -Syu
 echo " "
 
-# echo "// Removing Applications //"
-# echo "y" | sudo pacman -R 
-# echo " "
+echo "// Removing Applications //"
+echo "Use: pacman -Q to list installed packages
+echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-connections gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
+echo " "
 
 echo "// Installing Apllications //"
 sudo pacman -S vlc ufw chromium cups -y
