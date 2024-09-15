@@ -41,7 +41,7 @@ echo " "
 echo "// Configure Printing //"
 echo "// Go to 'Settings' > 'Printers' > 'Unlock' > 
 'Add Printer' //"
-echo "// Enter IPv4 Address '192.168.0.209' //"
+echo "// Enter IPv4 Address '192.168.0.30' //"
 echo "// Click 'LPD-Printer' //"
 echo "// Select 'Generic' > 'Generic PDF Printer' //"
 echo "// Click Three Dots //"
