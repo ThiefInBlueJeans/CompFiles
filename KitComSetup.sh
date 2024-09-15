@@ -3,7 +3,7 @@ echo " "
 
 echo "// Updating Time and Date //"
 sudo timedatectl set-timezone America/Los_Angeles
-sduo timedateclt set-ntp true
+sudo timedateclt set-ntp true
 sudo timedatectl status 
 echo " "
 
