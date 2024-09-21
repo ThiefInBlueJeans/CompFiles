@@ -17,16 +17,7 @@ echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-conn
 echo " "
 
 echo "// Installing Apllications //"
-sudo pacman -S vlc ufw cups base-devel
-mkdir /home/family/AUR/
-cd /home/family/AUR/
-curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz
-tar -xvf google-chrome.tar.gz
-rm google-chrome.tar.gz
-cd google-chrome
-makepkg -sirc
-cd /home/family/
-rm -r AUR
+sudo pacman -S vlc ufw cups firefox spotifyd
 echo " "
 
 echo "// Updating Aliases //"
