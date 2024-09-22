@@ -12,17 +12,23 @@ sudo pacman -Syu
 echo " "
 
 echo "// Installing Apllications //"
-sudo pacman -S ufw openssh
+sudo pacman -S ufw openssh docker docker-compose
 echo " "
 
 echo "// Configuring SSH //"
 echo "// Use ssh -p 753 masonp@192.168.0.### //"
+ip a
 sudo systemctl enable sshd
 sudo systemctl start sshd
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/sshd_config
 sudo mv sshd_config /etc/ssh/sshd_config
-echo " " 
+echo " "
+
+echo "// Configuring Docker //"
+systemctl enable --now docker.service
+systemctl status docker.service
+echo " "
 
 echo "// Updating Aliases //"
 sudo cp /etc/bash.bashrc /etc/bash.bashrc.bak
