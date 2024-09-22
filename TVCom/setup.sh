@@ -65,4 +65,9 @@ echo "run $ sudo systemctl start bluetooth"
 echo "run $ sudo reboot now"
 echo " "
 
+echo "// Change Background & Profile Pictures //"
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Background_Pic.jpg
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Profile_Pic.jpg
+echo " "
+
 echo "// Setup Script Complete //"
