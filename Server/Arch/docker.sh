@@ -30,7 +30,8 @@ https://192.168.0.222:9443
     http://192.168.0.222
     sudo -s
     cd /var/lib/docker/volumes/httpd_data/_data/
-
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/refs/heads/main/Standard/Chess_Timer.html
+    
 ## To-do
     # portainer
     # iventoy
