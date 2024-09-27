@@ -18,7 +18,7 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
 	}
 fi
 
-# alters standard bash prompt
+# alters standard bash prompt using https://bash-prompt-generator.org/
 PS1='\[\e[38;5;23;1m\]\u\[\e[38;5;25;2m\]@\[\e[38;5;26m\]\H\[\e[0;1m\] \[\e[0;38;5;92;2m\][\[\e[1;3m\]\w\[\e[23m\]]\[\e[0;1m\] \[\e[32m\]\$\[\e[39m\] \[\e[0m\]'
 
 # default editor
