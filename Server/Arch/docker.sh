@@ -31,7 +31,27 @@ https://192.168.0.222:9443
     sudo -s
     cd /var/lib/docker/volumes/httpd_data/_data/
     curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/refs/heads/main/Standard/Chess_Timer.html
-    
+
+# adguard home
+https://hub.docker.com/r/adguard/adguardhome
+192.168.0.222:3000
+all interfaces
+port 80
+all interfaces
+port 53
+admin
+same pw
+192.168.0.222
+add content filtering settings
+add 1.1.1.3, 1.0.0.3, 8.8.8.8, 8.8.4.4
+DO: add custom ip to web server for blocked sites
+DO: add encryption settings
+DO: add more blocklists
+DO: add allowlists
+DO: add dns rewrites
+
+
+
 ## To-do
     # portainer
     # iventoy
