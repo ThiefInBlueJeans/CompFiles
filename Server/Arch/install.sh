@@ -52,6 +52,6 @@ shutdown now
 # check boot priority
 ping archlinux.org
 # edit settings
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Server/Arch/setup.sh
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/refs/heads/main/Server/Arch/setup.sh
 chmod +x setup.sh
 ./setup.sh
