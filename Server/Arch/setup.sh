@@ -1,3 +1,6 @@
+
+### RUN AFTER INSTALL ###
+
 echo "// Running Setup Script //"
 echo " "
 
@@ -11,7 +14,7 @@ sudo pacman -Syu
 echo " "
 
 echo "// Installing Apllications //"
-sudo pacman -S ufw openssh docker docker-compose
+sudo pacman -S openssh
 echo " "
 
 echo "// Configuring SSH //"
@@ -35,16 +38,6 @@ mkdir /home/masonp/.config/micro/
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/refs/heads/main/Standard/settings.json
 mv settings.json /home/masonp/.config/micro/settings.json
 echo " " 
-
-echo "// Configuring Firewall //"
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow from 192.168.0.0/24 to any port 753 proto tcp
-sudo ufw enable
-sudo systemctl enable --now ufw
-sudo systemctl status ufw
-sudo ufw status verbose
-echo " "
 
 echo "run $ source /etc/bash.bashrc"
 echo "run $ paclean"
