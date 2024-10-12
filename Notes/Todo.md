@@ -31,6 +31,7 @@
     - Lock Bios
     - Organize Passwords
     - Update Passwords from Song Lyrics
+    - Let's Encrypt
 - 3D Printer
 - RC Quadcopter
 - Profile & Background Picture - Inkscape?
