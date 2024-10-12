@@ -1,11 +1,11 @@
 
 ### DO NOT RUN ###
 
-# Toshiba Laptop - Arch + Gnome + GDM
+# VirtualBox - Arch + Gnome + GDM
 
-# Plug-In USB
-# Boot to USB Menu w/ Fn+F12?
+# 10 GB Memory, 12 Processors, EFI, 50 GB Hard Disk, Bridged Adapter, USB 3.0, 64 MB Video Memory
 ping archlinux.org
+ls /sys/firmware/efi/efivars
 fdisk -l
 setfont ter-132b
 fdisk /dev/sda
@@ -13,11 +13,11 @@ d   # as many Times as Necessary
 n
 +1000M
 t
-1
+EF
 n
 +4000M
 t
-19
+82
 n
 w
 fdisk -l /dev/sda
@@ -38,7 +38,7 @@ micro /etc/locale.gen
 # uncomment "en_US.UTF-8 UTF-8"
 locale-gen
 micro /etc/hostname
-# add "TVCom1"
+# add "ArchVM1"
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman -Syu

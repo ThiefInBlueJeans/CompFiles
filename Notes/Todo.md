@@ -8,7 +8,7 @@
 - Editors
     - Zettlr or Joplin
     - VSCodium or Neovim
-    - New Bash Prompt
+    - New Bash Prompt (in .bashrc File?) & GRUB Screen
 - New Browser - No Firefox
     - Vivaldi
     - LibreWolf
