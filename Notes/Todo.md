@@ -1,0 +1,43 @@
+- Hyperland + Kitty
+- Youtube Watch Later
+- Podman
+- No Outlook
+- https://github.com/Genymobile/scrcpy
+- Android SDK or ADB
+- Root Old Tablet
+- Editors
+    - Zettlr or Joplin
+    - VSCodium or Neovim
+    - New Bash Prompt
+- New Browser - No Firefox
+    - Vivaldi
+    - LibreWolf
+    - LadyBird
+    - DuckDuckGo
+    - Zen
+    - Browser
+- New Google Account
+- Unbound or PiHole https://docs.pi-hole.net/guides/dns/unbound/
+- Linode
+- https://www.howtogeek.com/devops/how-to-manage-docker-from-your-terminal-with-the-lazydocker-tui/
+- Julia AI
+- SSH Keys
+- AnyDesk
+- RustDesk
+- Security
+    - SELinux
+    - AppArmor
+    - Firewall & Antivirus Software - ClamAV?
+    - Lock Bios
+    - Organize Passwords
+    - Update Passwords from Song Lyrics
+- 3D Printer
+- RC Quadcopter
+- Profile & Background Picture - Inkscape?
+- Darktable
+- Kanopy
+- Fix CBS Videos
+- Update MasonSafeBU
+- Reset & Clean Laptop & Phone
+- Find Device on Laptop
+- Upload Code Projects to GitHub
