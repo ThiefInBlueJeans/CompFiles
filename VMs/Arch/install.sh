@@ -62,3 +62,9 @@ ping archlinux.org
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/VMs/Arch/setup.sh
 chmod +x setup.sh
 ./setup.sh
+
+# If not all memory shows up
+# boot to UEFI bios settings
+# add memory from file
+# select grub*.efi file
+# continue to boot
