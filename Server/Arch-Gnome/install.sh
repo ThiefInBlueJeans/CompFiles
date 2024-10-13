@@ -3,6 +3,7 @@
 
 # New HP Desktop - Arch + Gnome + GDM
 
+# Install
 ping archlinux.org
 fdisk -l
 setfont ter-132b
@@ -56,37 +57,40 @@ exit
 shutdown now
 # remove USB
 # power On
+
+# Setup
 ping archlinux.org
 sudo timedatectl set-timezone America/Los_Angeles
 sudo timedateclt set-ntp true
 sudo timedatectl status
 sudo pacman -Syu
-# Use: pacman -Q to list installed packages
-# echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-connections gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
 echo "y" | sudo pacman -Rsnu gnome-calculator gnome-calendar gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
 sudo pacman -S vlc ufw cups
-
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles//main/Standard/dotbashrc
-sudo mv dotbashrc /home/masonp/.bashrc
-exit
-
-mkdir /home/masonp/.config/helix/
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/dotbashrc
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/config.toml
-mv config.toml /home/masonp/.config/micro/config.toml
-sudo systemctl enable cups.service
-sudo systemctl start cups.service
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Brother_HL-2270DW_series.ppd
-paclean
-sudo systemctl enable bluetooth
-sudo systemctl start bluetooth
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Background_Pic.jpg
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Profile_Pic.jpg
+mv dotbashrc ~/.bashrc
+mv config.toml ~/.config/helix/config.toml
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+paclean
 sudo reboot now
-# edit settings
+# edit settings & change pics
 
+# RDP
+# Enable Remote Login
+# add username & password
+# login using ip on Windows
+ip a
 
+# Firewall
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+sudo ufw allow from 192.168.0.0/24 to any port 3389 proto tcp
 sudo ufw enable
 sudo systemctl enable --now ufw
 sudo systemctl status ufw
