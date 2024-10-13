@@ -1,80 +1,116 @@
-echo "// Running Setup Script //"
-echo " "
 
-echo "// Updating Time and Date //"
-sudo timedatectl set-timezone America/Los_Angeles
-sudo timedateclt set-ntp true
-sudo timedatectl status
-echo " "
+### DO NOT RUN ###
 
-echo "// Updating System //"
-sudo pacman -Syu
-echo " "
+# New HP Desktop - Arch + Gnome + GDM
 
-echo "// Removing Applications //"
-echo "// Use: pacman -Q to list installed packages //"
-# echo "y" | sudo pacman -Rsnu epiphany gnome-calculator gnome-calendar gnome-connections gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
-echo "y" | sudo pacman -Rsnu gnome-calculator gnome-calendar gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
-echo " "
+# To Do
+    # File Sharing - Samba?
+    # Media Sharing
+    # SSH Server - With Keys
+    # Unbound - https://docs.pi-hole.net/guides/dns/unbound/
+    # Adguard Home
+    # HTTP Server - Apache
+    # Podman?
+    # Nmap
+    # FreshRSS
 
-echo "// Installing Apllications //"
-sudo pacman -S vlc ufw cups
-echo " "
+# Install
+    ping archlinux.org
+    fdisk -l
+    setfont ter-132b
+    fdisk /dev/sda
+    d   # as many times as necessary
+    n
+    +1000M
+    t
+    1
+    n
+    +4000M
+    t
+    19
+    n
+    w
+    fdisk -l /dev/sda
+    mkfs.fat -F 32 /dev/sda1
+    mkswap /dev/sda2
+    swapon /dev/sda2
+    mkfs.ext4 /dev/sda3
+    mount /dev/sda3 /mnt
+    mkdir /mnt/efi
+    mount /dev/sda1 /mnt/efi
+    lsblk
+    echo "y" | pacman -Sy archlinux-keyring
+    pacstrap /mnt base linux linux-firmware intel-ucode helix grub efibootmgr reflector man-pages man-db sudo networkmanager rsync xorg gnome
+    genfstab -U /mnt >> /mnt/etc/fstab
+    arch-chroot /mnt
+    ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
+    hwclock --systohc
+    helix /etc/locale.gen
+    # uncomment "en_US.UTF-8 UTF-8"
+    locale-gen
+    helix /etc/hostname
+    # add "aserv"
+    grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/efi
+    grub-mkconfig -o /boot/grub/grub.cfg
+    pacman -Syu
+    cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+    reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
+    cat /etc/pacman.d/mirrorlist
+    passwd
+    useradd -m masonp
+    passwd masonp
+    rfkill list
+    EDITOR=helix visudo /etc/sudoers
+    # add "masonp ALL=(ALL:ALL) ALL"
+    systemctl enable NetworkManager.service
+    systemctl enable gdm.service
+    exit
+    shutdown now
 
-echo "// Updating Aliases //"
-sudo cp /etc/bash.bashrc /etc/bash.bashrc.bak
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/bash.bashrc
-sudo mv bash.bashrc /etc/bash.bashrc
-echo " "
+# Setup
+    ping archlinux.org
+    sudo timedatectl set-timezone America/Los_Angeles
+    sudo timedateclt set-ntp true
+    sudo timedatectl status
+    sudo pacman -Syu
+    echo "y" | sudo pacman -Rsnu gnome-calculator gnome-calendar gnome-contacts gnome-maps gnome-music gnome-software gnome-tour gnome-user-docs gnome-weather malcontent totem yelp
+    sudo pacman -S vlc ufw cups
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/dotbashrc
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/config.toml
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Brother_HL-2270DW_series.ppd
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Background_Pic.jpg
+    curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Profile_Pic.jpg
+    mv dotbashrc ~/.bashrc
+    mv config.toml ~/.config/helix/config.toml
+    sudo systemctl enable cups.service
+    sudo systemctl start cups.service
+    sudo systemctl enable bluetooth
+    sudo systemctl start bluetooth
+    paclean
+    sudo reboot now
+    # edit settings & change pics
 
-# echo "// Configuring Micro //"
-# mkdir /home/masonp/.config/micro/
-# curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/settings.json
-# mv settings.json /home/masonp/.config/micro/settings.json
-# echo " "
+# RDP
+    # Enable Remote Login
+    # add username & password
+    # login using aserv.rdp on Windows
+    ip a
 
-echo "// Configuring Helix //"
-cd /home/masonp
-mkdir /home/masonp/.config/helix/
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/config.toml
-mv config.toml /home/masonp/.config/micro/config.toml
-echo " "
+# Keep GDM from Suspending
+    sudo su
+    passwd gdm  # not neccesary?
+    # add password
+    sudo -su gdm
+    dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+    # reboot
 
-# echo "// Configuring Firewall //"
-# sudo ufw default deny incoming
-# sudo ufw default allow outgoing
-# sudo ufw enable
-# sudo systemctl enable --now ufw
-# sudo systemctl status ufw
-# sudo ufw status verbose
-# echo " "
+# Add More Here
 
-echo "// Configure Printing //"
-echo "// Go to 'Settings' > 'Printers' > 'Unlock' > 'Add Printer' //"
-echo "// Enter IPv4 Address '.30' //"
-echo "// Click 'LPD-Printer' //"
-echo "// Select 'Generic' > 'Generic PDF Printer' //"
-echo "// Click Three Dots //"
-echo "// Click 'Printer Details'  //"
-echo "// Click 'Install PPD File' //"
-echo "// Select Brother_HL-2270DW_series.ppd //"
-echo "// Edit 'Printer Options' //"
-echo "// click 'Use Printer by Default' //"
-sudo systemctl enable cups.service
-sudo systemctl start cups.service
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Brother_HL-2270DW_series.ppd
-echo " "
-
-echo "run $ source /etc/bash.bashrc"
-echo "run $ paclean"
-echo "run $ sudo systemctl enable bluetooth"
-echo "run $ sudo systemctl start bluetooth"
-echo "run $ sudo reboot now"
-echo " "
-
-echo "// Change Background & Profile Pictures //"
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Background_Pic.jpg
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/Profile_Pic.jpg
-echo " "
-
-echo "// Setup Script Complete //"
+# Firewall
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo ufw allow from 192.168.0.0/24 to any port 3389 proto tcp
+    sudo ufw enable
+    sudo systemctl enable --now ufw
+    sudo systemctl status ufw
+    sudo ufw status verbose

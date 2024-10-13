@@ -1,38 +1,28 @@
-- UBlock Origin Browser Extension
-- file sharing
-- media sharing
 - Youtube Watch Later
-- Podman
-- No Outlook
 - https://github.com/Genymobile/scrcpy
 - Android SDK or ADB
 - Root Old Tablet
-- Editors
-    - Learn Helix & Rust
-    - Replace Micro
-    - Markdown Extension for Notes
-    - New Bash Prompt (in .bashrc File add to setup.sh) & GRUB Screen
-- New Google Account
-- Unbound or PiHole https://docs.pi-hole.net/guides/dns/unbound/
-- Linode
-- https://www.howtogeek.com/devops/how-to-manage-docker-from-your-terminal-with-the-lazydocker-tui/
+- Learn Helix & Rust
+- Markdown Extension for Notes
 - Julia AI
-- Security
-    - SSH Keys
-    - SELinux
-    - AppArmor
-    - Firewall & Antivirus Software - ClamAV?
-    - Lock Bios
-    - Organize Passwords
-    - Update Passwords from Song Lyrics
-    - Let's Encrypt
 - 3D Printer
 - RC Quadcopter
 - Profile & Background Picture - Inkscape?
 - Darktable
 - Kanopy
 - Fix CBS Videos
-- Update MasonSafeBU
-- Reset & Clean Laptop & Phone
-- Find Device on Laptop
 - Upload Code Projects to GitHub
+- Security
+    - New Google Account
+    - No Outlook
+    - SSH Keys
+    - SELinux
+    - AppArmor
+    - Firewall & Antivirus Software - ClamAV?
+    - Lock BIOS's
+    - Organize Passwords
+    - Update Passwords from Song Lyrics
+    - Let's Encrypt
+    - Update MasonSafeBU
+    - Reset & Clean Laptop & Phone
+    - Find Device on Laptop
