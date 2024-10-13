@@ -27,7 +27,7 @@ mount /dev/sda3 /mnt
 mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 echo "y" | pacman -Sy archlinux-keyring
-pacstrap /mnt base linux linux-firmware helix grub efibootmgr reflector man-pages man-db sudo networkmanager xorg gnome
+pacstrap /mnt base linux linux-firmware intel-ucode helix grub efibootmgr reflector man-pages man-db sudo networkmanager xorg gnome
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime

@@ -1,4 +1,4 @@
-- Hyperland + Kitty
+- Hyprland + Kitty
 - Youtube Watch Later
 - Podman
 - No Outlook
@@ -15,10 +15,8 @@
 - Linode
 - https://www.howtogeek.com/devops/how-to-manage-docker-from-your-terminal-with-the-lazydocker-tui/
 - Julia AI
-- SSH Keys
-- AnyDesk
-- RustDesk
 - Security
+    - SSH Keys
     - SELinux
     - AppArmor
     - Firewall & Antivirus Software - ClamAV?
