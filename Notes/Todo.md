@@ -1,4 +1,6 @@
-- Hyprland + Kitty
+- UBlock Origin Browser Extension
+- file sharing
+- media sharing
 - Youtube Watch Later
 - Podman
 - No Outlook

@@ -40,18 +40,17 @@ curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Stand
 mv config.toml /home/masonp/.config/micro/config.toml
 echo " "
 
-echo "// Configuring Firewall //"
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw enable
-sudo systemctl enable --now ufw
-sudo systemctl status ufw
-sudo ufw status verbose
-echo " "
+# echo "// Configuring Firewall //"
+# sudo ufw default deny incoming
+# sudo ufw default allow outgoing
+# sudo ufw enable
+# sudo systemctl enable --now ufw
+# sudo systemctl status ufw
+# sudo ufw status verbose
+# echo " "
 
 echo "// Configure Printing //"
-echo "// Go to 'Settings' > 'Printers' > 'Unlock' > 
-'Add Printer' //"
+echo "// Go to 'Settings' > 'Printers' > 'Unlock' > 'Add Printer' //"
 echo "// Enter IPv4 Address '.30' //"
 echo "// Click 'LPD-Printer' //"
 echo "// Select 'Generic' > 'Generic PDF Printer' //"
