@@ -6,16 +6,10 @@
 - Android SDK or ADB
 - Root Old Tablet
 - Editors
-    - Zettlr or Joplin
-    - VSCodium or Neovim
+    - Learn Helix & Rust
+    - Replace Micro
+    - Markdown Extension for Notes
     - New Bash Prompt (in .bashrc File add to setup.sh) & GRUB Screen
-- New Browser - No Firefox
-    - Vivaldi
-    - LibreWolf
-    - LadyBird
-    - DuckDuckGo
-    - Zen
-    - Browser
 - New Google Account
 - Unbound or PiHole https://docs.pi-hole.net/guides/dns/unbound/
 - Linode

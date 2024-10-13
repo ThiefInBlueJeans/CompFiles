@@ -27,11 +27,18 @@ curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Stand
 sudo mv bash.bashrc /etc/bash.bashrc
 echo " "
 
-echo "// Configuring Micro //"
-mkdir /home/family/.config/micro/
-curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/settings.json
-mv settings.json /home/family/.config/micro/settings.json
-echo " " 
+# echo "// Configuring Micro //"
+# mkdir /home/masonp/.config/micro/
+# curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/settings.json
+# mv settings.json /home/masonp/.config/micro/settings.json
+# echo " "
+
+echo "// Configuring Helix //"
+cd /home/masonp
+mkdir /home/masonp/.config/helix/
+curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/config.toml
+mv config.toml /home/masonp/.config/micro/config.toml
+echo " "
 
 echo "// Configuring Firewall //"
 sudo ufw default deny incoming

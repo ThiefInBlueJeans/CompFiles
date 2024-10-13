@@ -27,15 +27,15 @@ mount /dev/sda3 /mnt
 mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 echo "y" | pacman -Sy archlinux-keyring
-pacstrap /mnt base linux linux-firmware micro grub efibootmgr reflector man-pages man-db sudo networkmanager xorg gnome
+pacstrap /mnt base linux linux-firmware helix grub efibootmgr reflector man-pages man-db sudo networkmanager xorg gnome
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
 hwclock --systohc
-micro /etc/locale.gen
+helix /etc/locale.gen
 # uncomment "en_US.UTF-8 UTF-8"
 locale-gen
-micro /etc/hostname
+helix /etc/hostname
 # add "ASERV1"
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -47,7 +47,7 @@ passwd
 useradd -m masonp
 passwd masonp
 rfkill list
-EDITOR=micro visudo /etc/sudoers
+EDITOR=helix visudo /etc/sudoers
 # add "masonp ALL=(ALL:ALL) ALL"
 systemctl enable NetworkManager.service
 systemctl enable gdm.service

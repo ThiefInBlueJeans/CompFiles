@@ -27,9 +27,9 @@ sudo mv bash.bashrc /etc/bash.bashrc
 echo " "
 
 echo "// Configuring Micro //"
-mkdir /home/family/.config/micro/
+mkdir /home/masonp/.config/micro/
 curl -LO https://raw.githubusercontent.com/ThiefInBlueJeans/CompFiles/main/Standard/settings.json
-mv settings.json /home/family/.config/micro/settings.json
+mv settings.json /home/masonp/.config/micro/settings.json
 echo " " 
 
 echo "// Configuring Firewall //"
