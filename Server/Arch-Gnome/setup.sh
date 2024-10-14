@@ -104,12 +104,32 @@
     dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
     # reboot
 
-# Add More Here
+# Samba
+    sudo pacman -S samba avahi
+    mkdir /home/masonp/share
+    sudo helix /etc/samba/smb.conf
+    # add
+        # [share]
+            # comment = aserv Share
+            # path = /home/masonp/share
+            # writeable = yes
+            # browseable = yes
+            # create mask = 0644
+            # directory mask = 0755
+            # write list = user
+    sudo smbpasswd -a masonp
+    # add password
+    sudo systemctl enable avahi-daemon
+    sudo systemctl start avahi-daemon
+    sudo systemctl enable smb
+    sudo systemctl start smb
+    # Use \\aserv\share
 
-# Firewall
+# DO Firewall
     sudo ufw default deny incoming
     sudo ufw default allow outgoing
     sudo ufw allow from 192.168.0.0/24 to any port 3389 proto tcp
+    sudo ufw allow CIFS
     sudo ufw enable
     sudo systemctl enable --now ufw
     sudo systemctl status ufw
