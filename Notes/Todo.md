@@ -26,3 +26,8 @@
     - Update MasonSafeBU
     - Reset & Clean Laptop & Phone
     - Find Device on Laptop
+- Stock Market Predector
+    - Use APIs
+    - Sentiment value list compared to most recent articles about stock
+    - ntfy to send hourly notifications to phone (buy, sell, hold)
+    - based on sentiment thresholds
